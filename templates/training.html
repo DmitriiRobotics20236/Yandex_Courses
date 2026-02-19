@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if "инженер" in profession.lower() or "строитель" in profession.lower() %}
+        <h2>Инженерные тренажеры</h2>
+        <img src="https://img.freepik.com/premium-psd/futuristic-spaceship-soaring-through-cosmos_1112174-9337.jpg?semt=ais_hybrid"
+             alt="Схема расположения инженерных тренажеров"
+             style="max-width: 100%; height: auto;">
+    {% else %}
+        <h2>Научные симуляторы</h2>
+        <img src="https://fni.ncfu.ru/upload/medialibrary/69f/k8cs9iab2idmt0szqjf0ecwpigg100v3/i231_big.jpg"
+             alt="Схема расположения научных симуляторов"
+             style="max-width: 100%; height: auto;">
+    {% endif %}
+{% endblock %}
