@@ -1,6 +1,8 @@
 from flask import Flask
 from data import db_session
 from data.users import User
+from data.Jobs import Jobs
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -54,6 +56,15 @@ def main():
     )
     db_sess.add(colonist3)
 
+    first_job = Jobs(
+        team_leader=1,
+        job="Deployment of residential modules 1 and 2",
+        work_size=15,
+        collaborators="2, 3",
+        start_date=datetime.now(),
+        is_finished=False
+    )
+    db_sess.add(first_job)
     db_sess.commit()
     app.run()
 
